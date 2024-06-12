@@ -8,15 +8,15 @@ def evaluate(boardstring):
     empty_space = " "
     if xxx in boardstring: 
         # this value is boardstring too because it is the input that will change everytime
-        print("X won")
+        return("X won")
     elif ooo in boardstring:
         # this value is boardstring too because it is the input that will change everytime
-        print("O won")
+        return("O won")
     elif empty_space in boardstring: # note to self: default check mode is that an utterance is True.
-        print("game not over yet")
+        return("game not over yet")
     else:
-        print("draw")
+        return("draw")
 
-
+# use return instead of print to get rid of the "None" at the end
 print(evaluate("cheooox ory"))
     
