@@ -1,2 +1,4 @@
 # pyladies_tictactoe
-Tic Tac Toe
+Build a Tic Tac Toe game.
+
+
