@@ -2,8 +2,7 @@ import random
 start_board = "--------------------"
 player_user = "x"
 player_computer = "o"
-index = 0
-game_is_player = True
+
 
 def printboard(board):
     print(board)
@@ -39,12 +38,4 @@ while "-" in start_board:
         print("Game over.")
         break
     
-    
-
-#while game_is_player:
-     #printboard(start_board)
-     #update_board(start_board)
-
-
-#while index < len(start_board):
      
