@@ -18,6 +18,12 @@ def user_board(board):
         else:
             return position
 
+def computer_board(board):
+    position = random.randrange(19) #mistake in the move-file that you need to add random. for this to work
+    if board[position] == "-":
+        return position
+
+
 def update_board(board, position, mark):
     return board[:position] + mark + board[position+1:]
 
