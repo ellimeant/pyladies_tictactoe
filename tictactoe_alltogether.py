@@ -9,6 +9,22 @@ def printboard(board):
 
 printboard(start_board) # checks that the board is working
 
+def evaluate(boardstring):
+    xxx = "xxx"
+    ooo = "ooo"
+    empty_space = " "
+    if xxx in boardstring: 
+        # this value is boardstring too because it is the input that will change everytime
+        return("X won")
+    elif ooo in boardstring:
+        # this value is boardstring too because it is the input that will change everytime
+        return("O won")
+    elif empty_space in boardstring: # note to self: default check mode is that an utterance is True.
+        return("game not over yet")
+    else:
+        return("draw")
+    
+    
 def user_board(board):
     while True:
         mark = player_user
@@ -34,8 +50,9 @@ while "-" in start_board:
     computer_move = computer_board(start_board)
     start_board = update_board(start_board, computer_move, player_computer)
     print(f"The computer played. The new board is {start_board}.")
-    if "-" not in start_board:
-        print("Game over.")
-        break
+    evaluate(start_board)
+    #if "-" not in start_board:
+     #   print("Game over.")
+      #  break
     
      
