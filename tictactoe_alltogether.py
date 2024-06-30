@@ -24,7 +24,7 @@ def evaluate(boardstring):
     else:
         return("draw")
     
-    
+
 def user_board(board):
     while True:
         mark = player_user
@@ -47,10 +47,17 @@ while "-" in start_board:
     user_move = user_board(start_board)
     start_board = update_board(start_board, user_move, player_user)
     print(f"Here's the new board: {start_board}")
+    outcome = evaluate(start_board)
+    if outcome != "game not over yet":
+        print(f"The game ends with {outcome}")
+        break
     computer_move = computer_board(start_board)
     start_board = update_board(start_board, computer_move, player_computer)
     print(f"The computer played. The new board is {start_board}.")
-    evaluate(start_board)
+    outcome = evaluate(start_board)
+    if outcome != "game not over yet":
+        print(f"The game ends with {outcome}")
+        break
     #if "-" not in start_board:
      #   print("Game over.")
       #  break
