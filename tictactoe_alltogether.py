@@ -20,10 +20,8 @@ def evaluate(boardstring):
         # this value is boardstring too because it is the input that will change everytime
         return("O won")
     elif empty_space in boardstring: # note to self: default check mode is that an utterance is True.
-        return("game not over yet")
-    else:
-        return("draw")
-    
+        return("next move")
+
 
 def user_board(board):
     while True:
@@ -48,16 +46,20 @@ while "-" in start_board:
     start_board = update_board(start_board, user_move, player_user)
     print(f"Here's the new board: {start_board}")
     outcome = evaluate(start_board)
-    if outcome != "game not over yet":
+    if outcome == "X won":
         print(f"The game ends with {outcome}")
         break
+    elif outcome == "next move":
+        print(outcome)
     computer_move = computer_board(start_board)
     start_board = update_board(start_board, computer_move, player_computer)
     print(f"The computer played. The new board is {start_board}.")
     outcome = evaluate(start_board)
-    if outcome != "game not over yet":
+    if outcome == "O won":
         print(f"The game ends with {outcome}")
         break
+    elif outcome == "next move":
+        print(outcome)
     #if "-" not in start_board:
      #   print("Game over.")
       #  break
