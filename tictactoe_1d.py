@@ -22,7 +22,9 @@ def tictactoe_1d(board):
         # this value is boardstring too because it is the input that will change everytime
             return("O won")
         elif empty_space in boardstring: # note to self: default check mode is that an utterance is True.
-            print("next move")
+            print("next move") #to me, print makes more sense than return because the game does not end here.
+        else:
+            print("draw") # see comment elif empty_space
 
 
     def user_board(board):
